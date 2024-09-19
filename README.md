@@ -29,16 +29,18 @@ manage their own movie list.
 
 # To start the project, follow the steps below:
 
+note: commands may vary depending on the operating system, below commands are for windows, e.g. Use python3 instead of py or python in Mac or Linux
 1. Clone the repository
 2. go to backend repository and then do the following:
 - Create a virtual environment `py -m pip install --user virtualenv`
 - `python -m venv venv ` 
-- Activate the virtual environment `.\venv\Scripts\activate`
+- Activate the virtual environment `venv\Scripts\activate.bat`
 - Install the requirements using the command `pip install -r requirements.txt`
+- Go to movie_award folder `cd movie_awards`
 - Run make migrations using the command `python manage.py makemigrations`
 - Run the migrations using the command `python manage.py migrate`
 - Run the server using the command `python manage.py runserver`
-3. go to frontend repository and then do the following:
+3. Open another terminal and go to frontend repository and then do the following:
 - Install the requirements using the command `npm install`
 - Run the server using the command `npm run dev`
 
