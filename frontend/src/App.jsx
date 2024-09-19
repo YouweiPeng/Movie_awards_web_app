@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { useSelector } from 'react-redux';
+import Header from './components/Header';
+import LoginModal from './components/LoginModal';
+import SignUpModal from './components/SignUpModal';
+import MoviePage from './pages/MoviePage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const showLoginModal = useSelector(state => state.interfaceSlice.loginModal);
+  const showSignUpModal = useSelector(state => state.interfaceSlice.signUpModal);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <BrowserRouter>
+      <div className="bg-lime-200 h-screen flex flex-col items-center justify-center">
+        <Header />
+        <Routes>
+          <Route 
+            path="/" 
+            element={<HomePage />} 
+          />
+          <Route path="/movie/:imdbID" element={<MoviePage />} />
+        </Routes>
+        {showLoginModal && <LoginModal />}
+        {showSignUpModal && <SignUpModal />}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
