@@ -1,6 +1,7 @@
 ## This is the Movie award web app code challenge project
 Demo link: https://drive.google.com/file/d/1FhvoS6AbW5I5ShPj_3dCRjj4Q-KHNYVa/view?usp=sharing
-This project is a code challenge project for a movie award web app. The project is built using Django and Django Rest Framework. The project is a simple web app that allows users to nominate movies for awards. The project has the following features:
+
+This project is a code challenge project for a movie award web app. The project is built using Django and Django Rest Framework, used Basic authetication for user login security, and React for frontend, used Redux, tailwind css and MUI for UI development. The project is a simple web app that allows users to nominate movies for awards. The project has the following features:
 
 ## 1. Movie Search:
 - Users can search movie by title or ID. The search is done using the OMDB API.
