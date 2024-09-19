@@ -31,7 +31,9 @@ manage their own movie list.
 
 1. Clone the repository
 2. go to backend repository and then do the following:
-- Create a virtual environment
+- Create a virtual environment `py -m pip install --user virtualenv`
+- `python -m venv venv ` 
+- Activate the virtual environment `.\venv\Scripts\activate`
 - Install the requirements using the command `pip install -r requirements.txt`
 - Run make migrations using the command `python manage.py makemigrations`
 - Run the migrations using the command `python manage.py migrate`
